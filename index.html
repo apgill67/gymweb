@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalgidhar Gym - Ajitwal, Punjab</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: #f4f6f8;
+            color: #222;
+        }
+        header {
+            background: linear-gradient(90deg, #1a237e 60%, #43a047 100%);
+            color: #fff;
+            padding: 30px 0 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        header img {
+            width: 80px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            margin-bottom: 10px;
+        }
+        header h1 {
+            margin: 10px 0 5px 0;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+        header p {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        nav {
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+        nav a {
+            color: #1a237e;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #43a047;
+        }
+        .dashboard {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin: 40px auto 0 auto;
+            max-width: 1200px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(26,35,126,0.07);
+            flex: 1 1 300px;
+            max-width: 350px;
+            min-width: 280px;
+            padding: 30px 25px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-8px) scale(1.03);
+        }
+        .card img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 18px;
+            border: 2px solid #43a047;
+        }
+        .card h2 {
+            margin: 10px 0 8px 0;
+            font-size: 1.4rem;
+            color: #1a237e;
+        }
+        .card p {
+            font-size: 1rem;
+            color: #444;
+        }
+        .about, .contact {
+            max-width: 900px;
+            margin: 50px auto 0 auto;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px rgba(67,160,71,0.07);
+            padding: 35px 30px;
+        }
+        .about h2, .contact h2 {
+            color: #43a047;
+            margin-top: 0;
+        }
+        .gallery {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 40px 0;
+        }
+        .gallery img {
+            width: 260px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(26,35,126,0.08);
+        }
+        footer {
+            background: #1a237e;
+            color: #fff;
+            text-align: center;
+            padding: 18px 0;
+            margin-top: 40px;
+            font-size: 1rem;
+        }
+        @media (max-width: 900px) {
+            .dashboard {
+                flex-direction: column;
+                align-items: center;
+            }
+            .gallery img {
+                width: 90vw;
+                height: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://images.unsplash.com/photo-1517960413843-0aee8e2d471c?auto=format&fit=facearea&w=256&q=80" alt="Gym Logo">
+        <h1>Kalgidhar Gym</h1>
+        <p>Ajitwal, Punjab, India &mdash; Owner: Amrit Gill</p>
+    </header>
+    <nav>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section class="dashboard" id="dashboard">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=256&q=80" alt="Strength Training">
+            <h2>Strength Training</h2>
+            <p>Modern equipment for muscle building, powerlifting, and functional strength. Certified trainers to guide your journey.</p>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=facearea&w=256&q=80" alt="Cardio Zone">
+            <h2>Cardio Zone</h2>
+            <p>State-of-the-art treadmills, bikes, and cross-trainers for endurance and fat loss. Spacious and air-conditioned area.</p>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=facearea&w=256&q=80" alt="Personal Training">
+            <h2>Personal Training</h2>
+            <p>One-on-one coaching, nutrition plans, and progress tracking. Tailored programs for all fitness levels.</p>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=facearea&w=256&q=80" alt="Group Classes">
+            <h2>Group Classes</h2>
+            <p>Yoga, Zumba, HIIT, and more. Fun, energetic sessions to keep you motivated and engaged.</p>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2>About Kalgidhar Gym</h2>
+        <p>
+            Welcome to <strong>Kalgidhar Gym</strong>, the premier fitness destination in Ajitwal, Punjab. Founded and owned by <strong>Amrit Gill</strong>, our gym is dedicated to helping you achieve your health and fitness goals in a supportive and professional environment.<br><br>
+            We offer a wide range of facilities, including advanced strength and cardio equipment, expert trainers, and a variety of group classes. Whether you are a beginner or a seasoned athlete, Kalgidhar Gym is your partner in fitness.
+        </p>
+    </section>
+
+    <section class="gallery" id="gallery">
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80" alt="Gym Interior">
+        <img src="https://images.unsplash.com/photo-1514512364185-4c2b678c5a16?auto=format&fit=crop&w=600&q=80" alt="Workout Area">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Group Class">
+        <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=600&q=80" alt="Cardio Zone">
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <p>
+            <strong>Address:</strong> Main Road, Ajitwal, Punjab, India<br>
+            <strong>Phone:</strong> +91 98765 43210<br>
+            <strong>Email:</strong> kalgidhar.gym@gmail.com
+        </p>
+        <p>
+            Follow us on 
+            <a href="#" style="color:#1a237e;text-decoration:underline;">Instagram</a> | 
+            <a href="#" style="color:#1a237e;text-decoration:underline;">Facebook</a>
+        </p>
+    </section>
+
+    <footer>
+        &copy; 2024 Kalgidhar Gym, Ajitwal, Punjab. Owned by Amrit Gill.
+    </footer>
+</body>
+</html>
