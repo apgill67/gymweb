@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajitwal Gym</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #232526 0%, #414345 100%);
+            color: #fff;
+        }
+        header {
+            background: rgba(0,0,0,0.8);
+            padding: 0;
+            position: relative;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 60px;
+        }
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #ffb347;
+            text-shadow: 2px 2px 8px #000;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+        nav ul li a:hover {
+            color: #ffb347;
+        }
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px 20px 400px 60px;
+            background: url('https://images7.alphacoders.com/130/1300550.jpg') center/cover no-repeat;
+            min-height: 500px;
+            position: relative;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+        }
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin: 0 0 20px 0;
+            color: #ffb347;
+            text-shadow: 2px 2px 10px #000;
+        }
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: #fff;
+            text-shadow: 1px 1px 6px #000;
+        }
+        .cta-btn {
+            background: linear-gradient(90deg, #ffb347 0%, #ffcc33 100%);
+            color: #232526;
+            padding: 16px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            transition: background 0.2s, color 0.2s;
+        }
+        .cta-btn:hover {
+            background: #232526;
+            color: #ffb347;
+        }
+        .hero-img {
+            position: relative;
+            z-index: 2;
+            max-width: 400px;
+            border-radius: 30px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.7);
+            overflow: hidden;
+        }
+        .section {
+            padding: 70px 60px;
+            background: rgba(34,34,34,0.95);
+            margin-top: 0;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            color: #ffb347;
+            margin-bottom: 30px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+        .features {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .feature-card {
+            background: #232526;
+            border-radius: 20px;
+            padding: 30px 24px;
+            width: 300px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px) scale(1.04);
+            box-shadow: 0 8px 32px #ffb34755;
+        }
+        .feature-card img {
+            width: 70px;
+            margin-bottom: 18px;
+            filter: drop-shadow(0 2px 8px #ffb34788);
+        }
+        .feature-card h3 {
+            color: #ffb347;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin-top: 30px;
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 18px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            transition: transform 0.2s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .contact-form {
+            max-width: 450px;
+            margin: 0 auto;
+            background: #232526;
+            padding: 32px;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            margin: 0 0px 16px;
+            padding: 14px;
+            margin-bottom: 16px;
+            border: none;
+            border-radius: 15px;
+            background: #414345;
+            color: #fff;
+            font-size: 1rem;
+            resize: none;
+        }
+        .contact-form button {
+            width: 100%;
+            background: linear-gradient(90deg, #ffb347 0%, #ffcc33 100%);
+            color: #232526;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+        .contact-form button:hover {
+            background: #232526;
+            color: #ffb347;
+        }
+        footer {
+            background: #181818;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0 10px 0;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                padding: 40px 20px 20px 20px;
+                min-height: 400px;
+            }
+            .hero-img {
+                margin-top: 30px;
+                max-width: 90vw;
+            }
+            .section, nav {
+                padding: 40px 16px;
+            }
+            .features {
+                gap: 20px;
+            }
+        }
+        @media (max-width: 600px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .feature-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Kalgidhar Gym</div>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#join" class="cta-btn" style="padding:8px 22px;font-size:1rem;">Join Now</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Unleash Your Potential</h1>
+                <p>Kalgidhar Gym offers world-class equipment, expert trainers, and a vibrant community. Transform your body and mind in a space designed for champions.</p>
+                <a href="#join" class="cta-btn">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="section" id="features">
+        <div class="section-title">Why Choose Kalgidhar?</div>
+        <div class="features">
+            <div class="feature-card">
+                <img src="https://img.icons8.com/ios-filled/100/ffb347/dumbbell.png" alt="Equipment">
+                <h3>Modern Equipment</h3>
+                <p>State-of-the-art machines and free weights for every workout style.</p>
+            </div>
+            <div class="feature-card">
+                <img src="https://img.icons8.com/ios-filled/100/ffb347/coach.png" alt="Trainers">
+                <h3>Expert Trainers</h3>
+                <p>Certified professionals to guide you at every step of your fitness journey.</p>
+            </div>
+            <div class="feature-card">
+                <img src="https://img.icons8.com/ios-filled/100/ffb347/sauna.png" alt="Wellness">
+                <h3>Wellness & Recovery</h3>
+                <p>Relax in our sauna, steam room, and enjoy post-workout recovery amenities.</p>
+            </div>
+            <div class="feature-card">
+                <img src="https://img.icons8.com/ios-filled/100/ffb347/group-foreground-selected.png" alt="Community">
+                <h3>Vibrant Community</h3>
+                <p>Join group classes, events, and connect with like-minded fitness enthusiasts.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="gallery" style="background:#232526;">
+        <div class="section-title">Gallery</div>
+        <div class="gallery">
+            <img src="https://tiimg.tistatic.com/fp/1/007/091/gym-interior-designing-service-933.jpg" alt="Gym Interior">
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80" alt="Group Class">
+            <img src="https://plus.unsplash.com/premium_photo-1661580282598-6883482b4c8e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVyc29uYWwlMjB0cmFpbmVyfGVufDB8fDB8fHww" alt="Personal Trainers">
+            <img src="https://paragonfitness.com.au/wp-content/uploads/2022/12/A7309034.jpg" alt="Cardio Zone">
+            <img src="https://images.unsplash.com/photo-1597076537061-a6b58163aa45?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Weights Area">
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="section-title">Contact Us</div>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <textarea rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <section class="section" id="join" style="background:linear-gradient(90deg,#ca7601 0%,#ffcc33 100%);color:#232526;">
+        <div class="section-title" style="color:#232526;">Ready to Join?</div>
+        <div style="text-align:center;font-size:1.2rem;margin-bottom:20px;">
+            Sign up now and get your first week <b>FREE</b>!<br>
+            <span style="font-size:1.5rem;">💪</span>
+        </div>
+        <form class="contact-form" style="background:#fff;color:#232526;">
+            <input type="text" placeholder="Full Name" required style="color:#232526;">
+            <input type="email" placeholder="Email Address" required style="color:#232526;">
+            <button type="submit" style="background:#232526;color:#ffb347;">Join Kalgidhar</button>
+        </form>
+    </section>
+
+    <footer>
+        &copy; 2025 Kalgidhar Gym. All rights reserved.<br>
+        <span style="font-size:0.9rem;color:#ffb347;">Follow us on 
+            <a href="#" style="color:#ffb347;text-decoration:none;">Instagram</a> | 
+            <a href="#" style="color:#ffb347;text-decoration:none;">Facebook</a>
+        </span>
+    </footer>
+</body>
+</html>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Ensure hero background covers on mobile
+    function fixHeroHeight() {
+        var hero = document.querySelector('.hero');
+        if (window.innerWidth < 600) {
+            hero.style.minHeight = "320px";
+        } else {
+            hero.style.minHeight = "500px";
+        }
+    }
+    fixHeroHeight();
+    window.addEventListener('resize', fixHeroHeight);
+});
+</script>
+<style>
+/* Extra mobile fixes */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 18px 8px;
+    }
+    .logo {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    .hero {
+        padding: 24px 6vw 24px 6vw;
+        min-height: 320px;
+        background-position: center top;
+    }
+    .hero-content {
+        max-width: 100%;
+        padding: 0;
+    }
+    .hero-img {
+        max-width: 100vw;
+        border-radius: 16px;
+    }
+    .section {
+        padding: 28px 4vw;
+    }
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+    .contact-form {
+        padding: 16px 6vw;
+    }
+    .feature-card {
+        padding: 18px 8px;
+    }
+}
+html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+body {
+    box-sizing: border-box;
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Mobile nav toggle
+    const nav = document.querySelector("nav");
+    const navUl = nav.querySelector("ul");
+    // Create hamburger
+    const hamburger = document.createElement("div");
+    hamburger.innerHTML = `
+        <span style="display:block;width:28px;height:4px;background:#ffb347;margin:5px 0;border-radius:2px;"></span>
+        <span style="display:block;width:28px;height:4px;background:#ffb347;margin:5px 0;border-radius:2px;"></span>
+        <span style="display:block;width:28px;height:4px;background:#ffb347;margin:5px 0;border-radius:2px;"></span>
+    `;
+    hamburger.style.display = "none";
+    hamburger.style.cursor = "pointer";
+    hamburger.setAttribute("aria-label", "Toggle navigation");
+    hamburger.setAttribute("tabindex", "0");
+    nav.insertBefore(hamburger, navUl);
+
+    function handleResize() {
+        if (window.innerWidth <= 600) {
+            hamburger.style.display = "block";
+            navUl.style.display = "none";
+            navUl.style.flexDirection = "column";
+            navUl.style.width = "100%";
+            navUl.style.background = "rgba(34,34,34,0.98)";
+            navUl.style.position = "absolute";
+            navUl.style.top = "60px";
+            navUl.style.left = "0";
+            navUl.style.boxShadow = "0 8px 24px #0008";
+            navUl.style.zIndex = "100";
+        } else {
+            hamburger.style.display = "none";
+            navUl.style.display = "flex";
+            navUl.style.position = "";
+            navUl.style.background = "";
+            navUl.style.boxShadow = "";
+            navUl.style.top = "";
+            navUl.style.left = "";
+            navUl.style.zIndex = "";
+        }
+    }
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    hamburger.addEventListener("click", function() {
+        if (navUl.style.display === "none" || navUl.style.display === "") {
+            navUl.style.display = "flex";
+        } else {
+            navUl.style.display = "none";
+        }
+    });
+
+    // Hide nav menu when clicking a link (on mobile)
+    navUl.querySelectorAll("a").forEach(function(link) {
+        link.addEventListener("click", function() {
+            if (window.innerWidth <= 600) {
+                navUl.style.display = "none";
+            }
+        });
+    });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Move hamburger to top right on mobile
+    const nav = document.querySelector("nav");
+    const hamburger = nav.querySelector("div[aria-label='Toggle navigation']");
+    function positionHamburger() {
+        if (window.innerWidth <= 600) {
+            hamburger.style.position = "absolute";
+            hamburger.style.top = "13px";
+            hamburger.style.right = "16px";
+            hamburger.style.left = "auto";
+            hamburger.style.margin = "0";
+            hamburger.style.zIndex = "101";
+        } else {
+            hamburger.style.position = "";
+            hamburger.style.top = "";
+            hamburger.style.right = "";
+            hamburger.style.left = "";
+            hamburger.style.margin = "";
+            hamburger.style.zIndex = "";
+        }
+    }
+    positionHamburger();
+    window.addEventListener("resize", positionHamburger);
+});
+</script>
+<style>
+@media (max-width: 600px) {
+    .hero-content h1 {
+        font-size: 1.1rem !important;
+        margin-bottom: 8px !important;
+        line-height: 1.1;
+    }
+    .hero-content p {
+        font-size: 0.78rem !important;
+        margin-bottom: 14px !important;
+        line-height: 1.2;
+    }
+    .hero-content {
+        max-width: 49vw !important;
+        padding: 0 !important;
+        text-align: left !important;
+        align-items: flex-start !important;
+        margin-left: 0 !important;
+        margin-right: auto !important;
+        background: none !important;
+    }
+    .hero {
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+    }
+    .cta-btn {
+        font-size: 0.95rem !important;
+        padding: 12px 28px !important;
+    }
+}
+</style>
